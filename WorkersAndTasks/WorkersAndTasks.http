@@ -1,0 +1,6 @@
+@WorkersAndTasks_HostAddress = http://localhost:5034
+
+POST {{WorkersAndTasks_HostAddress}}/optimize/
+Accept: application/json
+
+###
