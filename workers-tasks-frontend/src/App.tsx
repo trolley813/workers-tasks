@@ -24,27 +24,31 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Workers and Tasks</h1>
-      <CodeEditor
-        className="input-textarea"
-        language="json"
-        value={scheduleRequest}
-        onChange={(event) => {
-          setScheduleRequest(event.target.value);
-        }}
-        padding={20}
-        data-color-mode="light"
-      ></CodeEditor>
-      <br />
-      <button type="submit" onClick={optimize}>
-        Рассчитать
-      </button>
-      <Suspense fallback={<p>Loading...</p>}>
-        {scheduleResponse && <Schedule data={scheduleResponse} />}
-      </Suspense>
-      {error && (
-        <pre className="error-text">Произошла ошибка: {error.message}</pre>
-      )}
+      <div>
+        <h1>Workers and Tasks</h1>
+        <CodeEditor
+          className="input-textarea"
+          language="json"
+          value={scheduleRequest}
+          onChange={(event) => {
+            setScheduleRequest(event.target.value);
+          }}
+          padding={20}
+          data-color-mode="light"
+        ></CodeEditor>
+        <br />
+        <button type="submit" onClick={optimize}>
+          Рассчитать
+        </button>
+      </div>
+      <div className="schedule">
+        <Suspense fallback={<p>Loading...</p>}>
+          {scheduleResponse && <Schedule data={scheduleResponse} />}
+        </Suspense>
+        {error && (
+          <pre className="error-text">Произошла ошибка: {error.message}</pre>
+        )}
+      </div>
     </div>
   );
 }

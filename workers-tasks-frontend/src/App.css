@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  display: flex;
 }
 
 .App-logo {
@@ -46,6 +47,26 @@
 .error-text {
   color: red;
   white-space: pre-wrap;
-  width: 80vw;
   margin: 0 auto;
+  font-size: larger;
+}
+
+table {
+  margin: 10px auto;
+  border-collapse: collapse;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+.schedule {
+  margin: 20px auto;
 }
