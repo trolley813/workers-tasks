@@ -1,9 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace WorkersAndTasks.Models;
 
 public class Worker
 {
+    [Required]
     public int Id { get; set; }
+    [Required]
+    [Range(1, 5, ErrorMessage = "Skill level must be between 1 and 5")]
     public int SkillLevel { get; set; }
+    [Required]
     public AvailableRange AvailableRange { get; set; }
 
     public DateTime GetAvailableStartTime(DateTime from)
